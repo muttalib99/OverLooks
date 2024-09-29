@@ -1,0 +1,78 @@
+.container
+{
+ width: 100%;
+ height: 100vh;
+ background-position: center;
+ background-size: cover;
+ position: relative;
+ 
+}
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 10%;
+    color: #000000;
+    position: relative;
+    top: 100px;
+    left: 40%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: inherit;
+
+    
+}
+
+.form-box h1::after
+{
+    content: '';
+    width: 50px;
+    height: 10px;
+    border-radius: 20px;
+    color:  #6d18f7;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.input-field
+{
+ background:#eaeaea;
+ margin: 20px 0px;
+ border-radius: 5px;
+ display: flex;
+ align-items: center;
+}
+input
+{
+width: 100%;
+background: #eaeaea;
+border: 0;
+outline: 0;
+padding: 18px;
+border-radius: 5px;
+}
+.input-field i
+{
+ margin-left: 15px;
+ color: #999;
+}
+.btn-field{
+ width: 25%;
+ display: flex;
+ position: absolute;
+ left: 42%;
+ 
+
+}
+
+.btn-field button
+{
+flex-basis: 48%;
+background-color: #088178;
+color: #fff;
+height: 40px;
+border-radius: 20px;
+border: 40px;
+outline: 0;
+cursor: pointer;
+
+}
