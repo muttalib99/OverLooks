@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="varify.css">
+</head>
+<body>
+    <div class="container">
+        <div id="navbar"></div>
+        
+        <h2> Enter OTP </h2>
+        <p>Please enter the 4-digit OTP sent to your email.</p>
+        <form id="otpForm">
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp" required>
+                <input type="text" maxlength="1" class="otp" required>
+                <input type="text" maxlength="1" class="otp" required>
+                <input type="text" maxlength="1" class="otp" required>
+            </div>
+            <button type="submit" class="submit-btn">Verify OTP</button>
+        </form>
+    </div>
+
+
+        <script>
+            // otp.js
+const inputs = document.querySelectorAll('.otp');
+
+inputs.forEach((input, index) => {
+    input.addEventListener('input', () => {
+        // Move to the next input field when current input is filled
+        if (input.value.length === 1 && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+        }
+        // Move to the previous input field when current input is empty
+        if (input.value.length === 0 && index > 0) {
+            inputs[index - 1].focus();
+        }
+    });
+
+    // Add a keydown event to handle the backspace key
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+            inputs[index - 1].focus();
+        }
+    });
+});
+
+// Optional: Handle form submission
+document.getElementById('otpForm').addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the form from submitting the default way
+
+    // Collect OTP values
+    const otp = Array.from(inputs).map(input => input.value).join('');
+    alert(`OTP Entered: ${otp}`); // Here you can handle the OTP as per your needs
+});
+
+			// Load navbar.html into the div with id="navbar"
+			fetch('nav.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('navbar').innerHTML = data;
+				});
+		</script>
+</body>
+</html>

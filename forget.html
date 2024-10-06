@@ -1,0 +1,19 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="forget.css">
+    </head>
+    <body>
+        <div id="navbar"></div>
+        
+        <div class="container">
+            
+        <script>
+			// Load navbar.html into the div with id="navbar"
+			fetch('nav.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('navbar').innerHTML = data;
+				});
+		</script>
+</body>
+</html>    

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="emaillg.css">
+
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <div class="container">
+    
+
+      <h2>LOGIN WITH E-MAIL</h2>
+      <p> Enter your valid Email address</p>
+      <form>
+      <div class="input-field">
+      
+        <input type="email" placeholder="email" class="otp-input" required ><br><br>
+      </div>
+      
+      <div class="btn-field">
+        <button type="submit" style="text-align: center"; onclick="tovarify()">LOGIN</button>
+      </div>
+      <p class="otp"> A 4 digit OTP will be send to your E-mail address </p>
+
+      <div class="e-btn" >
+        <i class="material-icons">phone</i>
+        <button type="button" style="text-align: center;" onclick="tologin()">PHONE</button>
+    </div>
+    </div>
+  </form>
+  <script>
+    function tologin()
+    {
+        window.location.href = "login.html";
+    }
+    function tovarify()
+    {
+        window.location.href = "varify.html";
+    }
+     
+    // Load navbar.html into the div with id="navbar"
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>

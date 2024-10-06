@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+    <section id="header">
+        <div pc1>
+            <a href="#"><img src="img/Logo2.png" class="logo2" alt=""></a>
+            <a href="#"><img src="img/txt.png" class="txt" alt=""></a>
+        </div>
+        <div>
+            <ul id="nbar">
+                <li><a class="active" href="index.html" class="menu">Home</a></li>
+                <li><a  href="forget.html" class="menu">Shop</a></li>
+                <li><a  href="forget.html" class="menu">About</a></li>
+                <li><a  href="forget.html" class="menu">Contact</a></li>
+                <li><a  href="login.html" class="menu">Login</a></li>
+                <li><a  href=""><i class="material-icons">shopping_cart</i></a></li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        // Get the current page URL
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Get all the links in the navigation bar
+        const navLinks = document.querySelectorAll('#nbar li a');
+
+        // Loop through each link and add the 'active' class to the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

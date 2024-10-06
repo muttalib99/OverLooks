@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <div class="container">
+    
+
+      <h2>LOGIN WITH OTP</h2>
+      <p> Enter your 10 digit mobile number</p>
+      <form>
+      <div class="input-field">
+        <img src="img/flag.png" class="flag">
+        <input type="phone" placeholder="Phone Number" class="otp-input" required><br><br>
+      </div>
+      
+      <div class="btn-field">
+        <button type="submit" style="text-align: center"; onclick="tovarify()">LOGIN</button>
+      </div>
+      <p class="otp"> A 6 digit OTP will be send to your phone number </p>
+
+      <div class="e-btn" >
+        <i class="material-icons">mail</i>
+      <button type="submit" style="text-align: center;" onclick="toemail()" >E-MAIL</button>
+    </div>
+    </div>
+  </form>
+  <script>
+  function toemail()
+    {
+        window.location.href = "emaillg.html";
+    }
+    function tovarify()
+    {
+        window.location.href = "varify.html";
+    }
+    // Load navbar.html into the div with id="navbar"
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>
