@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="shop.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="navbar"></div>
+	<div class="shop-container">
+		<h2>Our Collection</h2>
+		<div class="product-grid">
+		  
+		  <div class="product-card">
+			<img src="clths img/dj.webp" alt="Denim Jacket">
+			<h3>Denim Jacket</h3>
+			<p>₹1999</p>
+			<button onclick="addToCart('Denim Jacket', 1999)">Add to Cart</button>
+		  </div>
+	  
+		  <div class="product-card">
+			<img src="clths img/lb.jpg" alt="Leather Boots">
+			<h3>Leather Boots</h3>
+			<p>₹2999</p>
+			<button onclick="addToCart('Leather Boots', 2999)">Add to Cart</button>
+		  </div>
+	  
+		  <div class="product-card">
+			<div class="product-image-gallery">
+			  <img src="clths img/" class="main-image" alt="Casual Shirt">
+			  <div class="thumbnails">
+				<img src="clths img/cs.jpg" onclick="changeImage(this)" alt="Front">
+				<img src="clths img/cs2.jpg" onclick="changeImage(this)" alt="Back">
+				
+			  </div>
+			</div>
+			<h3>Casual Shirt</h3>
+			<p>₹999</p>
+			<button onclick="addToCart('Casual Shirt', 999)">Add to Cart</button>
+		  </div>
+		  
+	  
+		</div>
+	  </div>
+</body>
+</html>
+
+<script>
+	function addToCart(name, price) {
+	  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+	  cart.push({ name, price });
+	  localStorage.setItem('cart', JSON.stringify(cart));
+	  alert(name + " added to cart!");
+	}
+
+	
+function changeImage(thumb) {
+  const mainImg = thumb.closest('.product-card').querySelector('.main-image');
+  mainImg.src = thumb.src;
+}
+
+
+
+	
+	fetch('nav.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('navbar').innerHTML = data;
+				});
+
+
+	</script>
+	
+
+
+  
